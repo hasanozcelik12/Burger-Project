@@ -1,0 +1,258 @@
+@import "variable";
+@import "modules";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $normal-font;
+}
+
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+   @include back;
+    &-title{
+       @include logo;
+    }
+    &-menu{
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 80px;
+        align-items: center;
+        a{
+            &:nth-child(1){
+                font-weight: 500;
+                color: $theme-color;
+            }
+            &:nth-child(2){
+                font-weight: 500;
+                color: $theme-color;
+            }
+
+            text-decoration: none;
+        }
+    }
+    &-tel{
+       color: white;
+       i{
+       @include icon;
+       }
+
+    }
+}
+ 
+// BANNER
+.banner{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:20px 50px;
+    @include back;
+    
+    &-left{
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        button{
+           @extend %button;
+        }
+    }
+    &-middle{
+        width: 33%;
+       position: relative;
+        span{
+            position: absolute;
+            top: 5%;
+            right: 7%;
+           @include price;
+        }
+        img{
+            width:100%;
+            height:auto;
+            object-fit: cover;
+            @include hover;
+        }
+    }
+    &-right{
+        width: 33%;
+        text-align: end;
+        h3{
+            color: $theme2-color;
+            font-size:20px;
+
+        }
+    }
+}
+//PRODUCT
+.product{
+    padding: 20px 50px;
+    border-top: 5px solid black;
+   
+    &-title{
+        text-align: center;
+       h3{
+        color: $theme-color;
+       }
+       p{
+       font-family: $title-font;
+       }
+    }
+    &s{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+        &-card{
+            box-shadow: 2px 2px 5px gray;
+            width: 280px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+            margin-bottom:10px;
+            @include hover;
+            p{
+                margin: 10px 0;
+            }
+           img{
+            width: 100%;
+            background-color:brown;
+            object-fit: contain;
+            border-radius: 40px 40px 0 0;
+        }
+        &-content{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            span{
+                @include price;
+            }
+        }
+        &-order{
+            button{
+                @extend %button
+            }
+            i{
+             @include icon;
+            }
+        }
+        }
+    }
+
+    
+   
+}
+//ORDER
+.order{
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    border-top: 5px solid black;
+    &-card{
+        box-shadow: 2px 2px 9px black; 
+        display: flex;
+        justify-content: space-between;
+        overflow-x: hidden;
+        transform: rotate(5deg);
+        &-left{
+            width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          background-color: $theme-color;
+          width: 65%;
+          align-items: start;
+          padding: 0 0 15px 15px;
+          h3{
+            color: white;
+          }
+          button{
+            @extend %button;
+            color: white;
+            background-color: $theme2-color;
+          }
+        }
+        
+        
+        &-right{
+            width: 35%;
+           background-color: $theme2-color;
+            img{
+             width: 300px;
+             
+            }
+        }
+    }
+   
+}
+//SOCIAL
+.social{
+    padding: 20px 50px;
+ border-top: 5px solid black;
+    &-title{
+        text-align: center;
+        color:$theme-color;
+        }
+    &-card{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      
+        
+        &s{
+            flex: 1 1 150px;
+           
+        }
+        img{
+            width: 100px;
+        }
+    }
+}
+//FOOTER
+.footer{
+    border-top: 5px solid black;
+    display: flex;
+    flex-direction: row;
+     gap: 150px;
+     padding: 20px 50px;
+     justify-content: center;
+     li{
+        list-style-type: none;
+     }
+    &-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include logo;
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            i{
+                font-size: 24px;
+            }
+           
+        }
+    }
+    &-menu{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: wrap;
+        .active{
+            font-weight: bold;
+        }
+        
+    }
+}
